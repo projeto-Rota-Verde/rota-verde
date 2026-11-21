@@ -1,19 +1,27 @@
 /* =================================================================
    1. VARIÁVEIS E RESET
    ================================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 :root {
-    /* Cores baseadas na imagem */
-    --verde-escuro: #1e4b32;     /* Fundo do banner, botões principais, footer */
-    --verde-principal: #4a8b52;  /* Detalhes, botões, ícones */
-    --verde-claro: #d1e3d3;      /* Fundo dos cards e inputs */
-    --verde-fundo-suave: #f2f7f2;/* Fundo de algumas seções */
+    --verde-escuro: #1e4b32;
+    --verde-principal: #4a8b52;
+    --verde-claro: #a0cf82;
+    --off-white: #f2f7f2;
     --texto-escuro: #333333;
     --texto-claro: #ffffff;
     --texto-cinza: #666666;
-    
-    --fonte-principal: 'Inter', sans-serif;
+    /* Corrigido: 6 dígitos */
+
+    --fonte-principal: 'Montserrat', sans-serif;
+    /* Adicionado o fallback sans-serif */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -30,6 +38,7 @@ body {
 }
 
 /* Container para limitar a largura do site e centralizar */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -48,26 +57,64 @@ ul {
 /* =================================================================
    2. HEADER (Cabeçalho)
    ================================================================= */
+
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 5px 2%;
     background-color: var(--texto-claro);
 }
 
 .header .logo img {
-    height: 40px;
+    margin-right: auto;
+    width: 50px;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+}
+
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.85;
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+}
+
+/* Cor da palavra "rota" (o primeiro span) */
+.logo-texto span:nth-child(1) {
+    color: var(--verde-escuro);
+    /* Usa o verde escuro */
+}
+
+/* Cor da palavra "verde" (o segundo span) */
+.logo-texto span:nth-child(2) {
+    color: var(--verde-principal);
+    /* Usa o verde mais claro */
+}
+
+.navbar {
+    margin-left: auto;
+    margin-right: 40px;
 }
 
 .navbar ul {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 40px;
 }
 
 .navbar a {
     color: var(--texto-cinza);
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: normal;
     transition: color 0.3s;
 }
 
@@ -79,8 +126,10 @@ ul {
     background-color: var(--verde-principal);
     color: var(--texto-claro);
     padding: 10px 24px;
-    border-radius: 20px;
-    font-weight: 600;
+    border-radius: 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: normal;
     transition: background 0.3s;
 }
 
@@ -91,30 +140,35 @@ ul {
 /* =================================================================
    3. HERO (Banner Principal)
    ================================================================= */
+
 .hero {
-    /* Coloque o caminho da sua imagem de fundo aqui */
- background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/imagens/img/fundo.png') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/assets/imagens/img/fundo.png") center/cover no-repeat;
     padding: 120px 5%;
     color: var(--texto-claro);
     position: relative;
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     line-height: 1.1;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 60px;
+
 }
 
 .btn-primario {
@@ -150,100 +204,118 @@ ul {
 /* =================================================================
    4. COMO FUNCIONA (Cards e Alerta)
    ================================================================= */
+
 .como-funciona {
-    padding: 80px 5%;
+    padding: 60px 5% 0;
     background-color: var(--texto-claro);
 }
 
 /* A etiqueta pequena "COMO FUNCIONA" */
 .tag-secao {
     display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--verde-escuro);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1E1E1E;
     text-transform: uppercase;
-    border-bottom: 2px solid var(--verde-claro);
-    margin-bottom: 10px;
-    padding-bottom: 2px;
+    border-bottom: 2px solid var(--verde-escuro);
+    padding: 0 12px 2px 0;
+    margin-bottom: 14px;
 }
 
 .como-funciona h2 {
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    color: var(--verde-escuro);
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #1F2D24;
 }
 
 /* Grid dos 4 cards */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+    margin-bottom: 48px;
 }
 
 .card {
-    background-color: var(--verde-fundo-suave);
-    padding: 30px 20px;
-    border-radius: 15px;
+    background-color: var(--off-white);
+    padding: 16px; 
+    border-radius: 30px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
 }
 
 .card-icone {
-    background-color: var(--texto-claro);
-    width: 60px;
-    height: 60px;
+    background-color: var(--verde-claro);
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-}
-
-.card-icone img {
-    width: 30px;
+    flex-shrink: 0;
 }
 
 .card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: var(--texto-escuro);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 30px;  /* espaço entre título e texto */
+    color: #1a1a1a;
 }
 
 .card p {
-    font-size: 0.9rem;
-    color: var(--texto-cinza);
+    font-size: 1rem;
+    color: #1a1a1a;
+    line-height: 1.35;
 }
 
 /* Caixa de Alerta */
 .alerta-eletronico {
     background-color: var(--verde-escuro);
-    color: var(--texto-claro);
-    padding: 30px;
-    border-radius: 15px;
+    color: #fff;
+    padding: 20px 24px;
+    border-radius: 35px;
+    /* era 15px */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    /* ícone no topo, ao lado do título */
     gap: 20px;
 }
 
-.alerta-eletronico img {
-    width: 40px;
+.icone-alerta-wrapper {
+    width: 88px;
+    height: 88px;
+    background-color: #FFEA00;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .alerta-eletronico h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    font-size: 1.9rem;
+    /* era 1.2rem */
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .alerta-eletronico p {
-    font-size: 0.95rem;
-    opacity: 0.9;
+    font-size: 1.35rem;
+    /* era 0.95rem */
+    line-height: 1.3;
+    opacity: 1;
+    /* era 0.9 */
 }
 
 /* =================================================================
    5. PONTO DE COLETA
    ================================================================= */
 .ponto-coleta {
-    padding: 80px 5%;
+   padding: 60px 5% 0;
     background-color: var(--texto-claro);
 }
 
@@ -256,7 +328,7 @@ ul {
 .barra-busca {
     display: flex;
     align-items: center;
-    background-color: var(--verde-fundo-suave);
+    background-color: var(--off-white);
     border-radius: 30px;
     padding: 5px 20px;
     margin-bottom: 20px;
@@ -274,18 +346,32 @@ ul {
 }
 
 .barra-busca button {
-    background: none;
+    background-color: var(--verde-claro); /* Fundo verde */
     border: none;
-    font-size: 1.2rem;
+    width: 48px;          /* Largura da bolinha */
+    height: 48px;         /* Altura da bolinha */
+    border-radius: 50%;   /* Faz o círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    transition: 0.3s;
+    padding: 0;
+}
+
+.barra-busca button:hover {
+    background-color: var(--verde-principal);
 }
 
 .filtros {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
     flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 20px 20px 24px;
+    border: 0.5px solid var(--verde-claro);
+    border-radius: 30px;
 }
 
 .filtros span {
@@ -295,21 +381,36 @@ ul {
 }
 
 .filtro {
-    background-color: var(--texto-claro);
-    border: 1px solid var(--verde-claro);
-    padding: 8px 16px;
+    background-color: #dfe9d3;
+    border: none;
+    padding: 8px 20px;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 0.9rem;
-    color: var(--texto-cinza);
+    font-family: var(--fonte-principal);
+    font-size: 0.95rem;
+    color: #1a1a1a;
     transition: 0.3s;
 }
 
-.filtro.ativo, .filtro:hover {
-    background-color: var(--verde-claro);
-    color: var(--verde-escuro);
-    font-weight: 600;
+.filtro.ativo {
+    background-color: var(--verde-principal);
+    color: #fff;
 }
+
+.filtros span {
+    width: 100%; /* Força o texto a ficar sozinho na linha de cima */
+    margin-bottom: 8px; /* Espaço entre o texto e os botões */
+    font-size: 1rem;
+    color: var(--texto-escuro);
+}
+
+
+.filtro:hover:not(.ativo) {  /* Efeito apenas quando passa o mouse */
+    background-color: var(--verde-fundo-suave); 
+}
+
+    
+
 
 /* Layout do mapa */
 .mapa-container {
@@ -353,8 +454,9 @@ ul {
 /* =================================================================
    6. SOBRE NÓS
    ================================================================= */
+
 .sobre-nos {
-    padding: 80px 5%;
+   padding: 60px 5%;
     display: flex;
     align-items: center;
     gap: 50px;
@@ -463,7 +565,7 @@ ul {
     padding: 12px 15px;
     border: 1px solid var(--verde-claro);
     border-radius: 10px;
-    background-color: var(--verde-fundo-suave);
+    background-color: var(--off-white);
     font-family: var(--fonte-principal);
     outline: none;
 }
@@ -506,7 +608,8 @@ ul {
    8. FOOTER (Rodapé)
    ================================================================= */
 .footer {
-    background-color: #1a1a1a; /* Cor bem escura */
+    background-color: #1a1a1a;
+    /* Cor bem escura */
     color: var(--texto-claro);
     padding: 60px 5% 20px;
 }
@@ -572,13 +675,16 @@ ul {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .hero h1 {
         font-size: 2.5rem;
     }
-    
-    .mapa-container, .sobre-nos, .contato {
-        grid-template-columns: 1fr; /* Empilha no celular */
+
+    .mapa-container,
+    .sobre-nos,
+    .contato {
+        grid-template-columns: 1fr;
+        /* Empilha no celular */
         flex-direction: column;
     }
 
