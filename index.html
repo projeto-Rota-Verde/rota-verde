@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota Verde - Descarte certo, futuro sustentável</title>
-    
-    <!-- LINKS DE CSS, FONTES E ÍCONES AQUI -->
-    <link rel="stylesheet" href="css/style.css">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rota Verde - Descarte certo, futuro sustentável</title>
+
+    <!-- LINKS DE CSS, FONTES E ÍCONES AQUI -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
     <!-- =================================================================
@@ -25,11 +26,16 @@
          
 
     <!-- ================= 1. CABEÇALHO (HEADER) ================= -->
+
     <header class="header">
         <div class="logo">
-            <img src="assets/imagens/icons/logo.png" alt="Logo Rota Verde">
+            <img src="assets/imagens/icons/logo.png" alt="Ícone Rota Verde" />
+            <div class="logo-texto">
+                <span>rota</span>
+                <span>verde</span>
+            </div>
         </div>
-        
+
         <nav class="navbar">
             <ul>
                 <!-- Os links com "#" levam para o ID correspondente na página -->
@@ -39,18 +45,17 @@
                 <li><a href="#sobre-nos">Sobre nós</a></li>
             </ul>
         </nav>
-        
+
         <a href="#contato" class="btn-contato">Contato</a>
     </header>
 
     <!-- CONTEÚDO PRINCIPAL DO SITE -->
     <main>
-        
         <!-- ================= 2. BANNER PRINCIPAL (HERO) ================= -->
         <!-- O id="inicio" é o alvo do link "Início" no menu -->
         <section class="hero" id="inicio">
             <div class="hero-content">
-                <h1>Descarte certo,<br>futuro sustentável</h1>
+                <h1>Descarte certo,<br />futuro sustentável</h1>
                 <p>Conectamos você às cooperativas de reciclagem da sua região.</p>
                 <a href="#ponto-coleta" class="btn-primario">Encontrar ponto de coleta &rarr;</a>
             </div>
@@ -66,25 +71,33 @@
             <div class="cards-grid">
                 <!-- Card 1: Papel -->
                 <div class="card">
-                    <div class="card-icone"><img src="icone-papel.svg" alt="Papel"></div>
+                    <div class="card-icone">
+                        <img src="assets/imagens/icons/icone-papel.svg" alt="Papel" />
+                    </div>
                     <h3>Papel</h3>
                     <p>Jornais, revistas, caixas e embalagens de papel limpo.</p>
                 </div>
                 <!-- Card 2: Plástico -->
                 <div class="card">
-                    <div class="card-icone"><img src="icone-plastico.svg" alt="Plástico"></div>
+                    <div class="card-icone">
+                        <img src="assets/imagens/icons/icone-plastico.svg" alt="Plástico" />
+                    </div>
                     <h3>Plástico</h3>
                     <p>Garrafas, potes, embalagens e copos plásticos.</p>
                 </div>
                 <!-- Card 3: Metal -->
                 <div class="card">
-                    <div class="card-icone"><img src="icone-metal.svg" alt="Metal"></div>
+                    <div class="card-icone">
+                        <img src="assets/imagens/icons/icone-metal.svg" alt="Metal" />
+                    </div>
                     <h3>Metal</h3>
                     <p>Latas de alumínio, tampinhas e embalagens metálicas.</p>
                 </div>
                 <!-- Card 4: Vidro -->
                 <div class="card">
-                    <div class="card-icone"><img src="icone-vidro.svg" alt="Vidro"></div>
+                    <div class="card-icone">
+                        <img src="assets/imagens/icons/icone-vidro.svg" alt="Vidro" />
+                    </div>
                     <h3>Vidro</h3>
                     <p>Garrafas, potes e frascos de vidro, sem tampa.</p>
                 </div>
@@ -92,29 +105,43 @@
 
             <!-- Alerta de Lixo Eletrônico -->
             <div class="alerta-eletronico">
-                <img src="icone-alerta.svg" alt="Aviso">
+                <div class="icone-alerta-wrapper">
+                    <img src="assets/imagens/icons/icone-alerta.svg" alt="Aviso" />
+                </div>
                 <div>
                     <h3>Lixo eletrônico não é lixo comum</h3>
-                    <p>Celulares, pilhas, baterias, carregadores e cabos têm materiais que contaminam o solo e a água. <strong>Não jogue no lixo comum:</strong> leve a um ponto de coleta que receba eletrônicos.</p>
+                    <p>
+                        Celulares, pilhas, baterias, carregadores e cabos têm materiais
+                        que contaminam o solo e a água.
+                        <strong>Não jogue no lixo comum:</strong> leve a um ponto de
+                        coleta que receba eletrônicos.
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- ================= 4. PONTO DE COLETA (MAPA) ================= -->
+
         <section class="ponto-coleta" id="ponto-coleta">
             <span class="tag-secao">PONTO DE COLETA</span>
             <h2>Encontre o ponto de coleta mais perto de você</h2>
 
-            <!-- Barra de Busca -->
             <div class="barra-busca">
-                <input type="text" placeholder="São José Laranjal">
-                <button type="submit">🔍</button>
+                <!-- Pode manter o input como texto ou select -->
+                <input type="text" placeholder="Selecione seu bairro">
+
+                <!-- A bolinha verde é criada por esta tag <button> -->
+                <button type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10H7Z" fill="white" />
+                    </svg>
+                </button>
             </div>
 
             <!-- Filtros de Material -->
             <div class="filtros">
                 <span>Filtrar por material</span>
-                <button class="filtro ativo">Plástico</button>
+                <button class="filtro ">Plástico</button>
                 <button class="filtro">Papel</button>
                 <button class="filtro">Papelão</button>
                 <button class="filtro">Vidro</button>
@@ -122,48 +149,82 @@
             </div>
 
             <!-- Container do Mapa e Informações -->
-            <div class="mapa-container">
+
+            <div class="mapa-container" style=" display: none; ">
+
                 <!-- Coluna da Esquerda: Informações -->
-                <div class="info-ponto">
+
+                <div class="info-ponto" style="display: none;">
+
+                    <!-- Card 1 -->
+
                     <div class="card-info">
                         <h4>Responsável pela coleta</h4>
-                        <p><strong>Marta Aparecida</strong><br>Catadora autônoma</p>
+
+                        <!--  o JS vai preencher isso depois -->
+
+                        <p>
+                            <strong id="nome-coletor">Nenhum selecionado</strong><br />
+                            <span id="tipo-coletor">Use os filtros acima</span>
+                        </p>
                     </div>
+
+                    <!-- Card 2 -->
+
                     <div class="card-info">
                         <h4>Contato</h4>
-                        <p><strong>(31) 99876-5432</strong><br>*Dado conferido pela equipe</p>
+
+                        <!--  o JS vai preencher isso depois -->
+
+                        <p>
+                            <strong id="telefone-coletor">--</strong><br />
+                            *Dado conferido pela equipe
+                        </p>
                     </div>
                 </div>
-                
+
                 <!-- Coluna da Direita: Mapa -->
+
                 <div class="mapa">
-                    <!-- Substitua o 'src' pelo link de incorporação do Google Maps -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.940066214975!2d-42.8812313!3d-20.7533038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDQ1JzExLjkiUyA0Mic1Mic1Mi42Ilc!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.940066214975!2d-42.8812313!3d-20.7533038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDQ1JzExLjkiUyA0Mic1Mic1Mi42Ilc!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr"
+                        width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
 
         <!-- ================= 5. SOBRE NÓS ================= -->
+
         <section class="sobre-nos" id="sobre-nos">
             <div class="texto-sobre">
                 <span class="tag-secao">SOBRE NÓS</span>
-                <h2>O time por trás do<br>Rota Verde</h2>
-                <p>Somos um grupo de estudantes da Univícosa que transformou uma pesquisa em um projeto de extensão: ajudar os moradores a reciclar do jeito certo.</p>
+                <h2>O time por trás do<br />Rota Verde</h2>
+                <p>
+                    Somos um grupo de estudantes da Univícosa que transformou uma
+                    pesquisa em um projeto de extensão: ajudar os moradores a reciclar
+                    do jeito certo.
+                </p>
                 <p class="orientador">Orientação: Svetlana Fialho Soria Galvarro</p>
             </div>
             <div class="imagem-sobre">
-                <img src="imagem-equipe.jpg" alt="Equipe Rota Verde">
+                <img src="imagem-equipe.jpg" alt="Equipe Rota Verde" />
             </div>
         </section>
 
         <!-- ================= 6. CONTATO E FORMULÁRIO ================= -->
+
         <section class="contato" id="contato">
             <!-- Lado Esquerdo: Informações -->
             <div class="info-contato">
                 <span class="tag-secao">CONTATO</span>
                 <h2>Vamos conversar?</h2>
-                <p>Dúvida, sugestão ou um ponto de coleta para cadastrar no seu bairro? Escolha o canal que preferir:</p>
-                
+                <p>
+                    Dúvida, sugestão ou um ponto de coleta para cadastrar no seu bairro?
+                    Escolha o canal que preferir:
+                </p>
+
                 <ul class="lista-contatos">
                     <li><span>📷</span> Instagram: @proj.rotaverde</li>
                     <li><span>✉️</span> proj.rotaverde@gmail.com</li>
@@ -174,53 +235,54 @@
             <!-- Lado Direito: Formulário -->
             <div class="formulario">
                 <form action="#" method="POST">
-                    
                     <div class="input-group">
                         <label for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                        <input type="text" id="nome" name="nome" placeholder="Seu Nome" required />
                     </div>
 
                     <div class="input-group">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="voce@gmail.com" required>
+                        <input type="email" id="email" name="email" placeholder="voce@gmail.com" required />
                     </div>
 
                     <div class="input-group">
                         <label>Assunto</label>
                         <div class="radios">
-                            <input type="radio" id="sugestao" name="assunto" value="sugestao" checked>
+                            <input type="radio" id="sugestao" name="assunto" value="sugestao" checked />
                             <label for="sugestao">Sugestão</label>
-                            
-                            <input type="radio" id="duvida" name="assunto" value="duvida">
+
+                            <input type="radio" id="duvida" name="assunto" value="duvida" />
                             <label for="duvida">Dúvida</label>
-                            
-                            <input type="radio" id="cadastrar" name="assunto" value="cadastrar">
+
+                            <input type="radio" id="cadastrar" name="assunto" value="cadastrar" />
                             <label for="cadastrar">Cadastrar coletor</label>
                         </div>
                     </div>
 
                     <div class="input-group">
                         <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" placeholder="Escreva aqui sua mensagem..." rows="5"></textarea>
+                        <textarea id="mensagem" name="mensagem" placeholder="Escreva aqui sua mensagem..."
+                            rows="5"></textarea>
                     </div>
 
                     <button type="submit" class="btn-enviar">Enviar Mensagem</button>
                 </form>
             </div>
         </section>
-
     </main>
 
+
     <!-- ================= 7. RODAPÉ (FOOTER) ================= -->
+
     <footer class="footer">
         <div class="footer-conteudo">
             <!-- Coluna 1 -->
             <div class="footer-col">
-                <img src="logo-rota-verde-branco.png" alt="Rota Verde">
+                <img src="logo-rota-verde-branco.png" alt="Rota Verde" />
                 <p>Pequenas escolhas, grandes impactos.</p>
                 <p>@proj.rotaverde</p>
             </div>
-            
+
             <!-- Coluna 2 -->
             <div class="footer-col">
                 <h4>LINKS ÚTEIS</h4>
@@ -232,21 +294,29 @@
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </div>
-            
+
             <!-- Coluna 3 -->
+
             <div class="footer-col">
                 <h4>REALIZAÇÃO</h4>
-                <img src="logo-univicosa.png" alt="Univícosa">
-                <p>Engenharia de Computação<br>Sustentabilidade Aplicada</p>
+                <img src="logo-univicosa.png" alt="Univiçosa" />
+                <p>Engenharia de Computação<br />Sustentabilidade Aplicada</p>
             </div>
         </div>
 
         <!-- Linha Final de Direitos -->
+
         <div class="footer-bottom">
             <p>&copy; 2026 Rota Verde. Todos os direitos reservados.</p>
             <p>Projeto de Extensão - Univícosa</p>
         </div>
     </footer>
-
 </body>
+
+<!-- Scripts -->
+<script src="js/script.js"></script>
+</body>
+
+</html>
+
 </html>
